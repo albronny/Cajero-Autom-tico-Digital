@@ -10,6 +10,7 @@ int main() {
     char usuario[20], contrasena[20];
     int acceso = 0;
     int posicionUsuario = -1;
+    int opcion;
 
     printf("\nSISTEMA DE CAJERO AUTOMATICO\n\n");
 
@@ -27,7 +28,19 @@ int main() {
         }
     }
 
-    if(acceso == 0) {
+    if(acceso == 1) {
+        do {
+            printf("\n===== MENU =====\n");
+            printf("1. Consultar saldo\n");
+            printf("2. Depositar dinero\n");
+            printf("3. Retirar dinero\n");
+            printf("4. Salir\n");
+            printf("Seleccione opcion: ");
+            scanf("%d", &opcion);
+
+        } while(opcion != 4);
+
+    } else {
         printf("Credenciales incorrectas.\n");
     }
 
