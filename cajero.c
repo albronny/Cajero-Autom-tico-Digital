@@ -39,31 +39,41 @@ int main() {
             printf("Seleccione opcion: ");
             scanf("%d", &opcion);
 
-            if(opcion == 1) {
-                printf("Su saldo actual es: RD$ %.2f\n", saldos[posicionUsuario]);
-            }
+            switch(opcion) {
 
-            else if(opcion == 2) {
-                printf("Ingrese monto a depositar: ");
-                scanf("%f", &deposito);
+                case 1:
+                    printf("Su saldo actual es: RD$ %.2f\n", saldos[posicionUsuario]);
+                    break;
 
-                saldos[posicionUsuario] += deposito;
+                case 2:
+                    printf("Ingrese monto a depositar: ");
+                    scanf("%f", &deposito);
 
-                printf("Deposito realizado con exito.\n");
-                printf("Nuevo saldo: RD$ %.2f\n", saldos[posicionUsuario]);
-            }
+                    saldos[posicionUsuario] += deposito;
 
-            else if(opcion == 3) {
-                printf("Ingrese monto a retirar: ");
-                scanf("%f", &retiro);
-
-                if(retiro <= saldos[posicionUsuario]) {
-                    saldos[posicionUsuario] -= retiro;
-                    printf("Retiro realizado con exito.\n");
+                    printf("Deposito realizado con exito.\n");
                     printf("Nuevo saldo: RD$ %.2f\n", saldos[posicionUsuario]);
-                } else {
-                    printf("Fondos insuficientes para realizar el retiro.\n");
-                }
+                    break;
+
+                case 3:
+                    printf("Ingrese monto a retirar: ");
+                    scanf("%f", &retiro);
+
+                    if(retiro <= saldos[posicionUsuario]) {
+                        saldos[posicionUsuario] -= retiro;
+                        printf("Retiro realizado con exito.\n");
+                        printf("Nuevo saldo: RD$ %.2f\n", saldos[posicionUsuario]);
+                    } else {
+                        printf("Fondos insuficientes para realizar el retiro.\n");
+                    }
+                    break;
+
+                case 4:
+                    printf("Gracias por utilizar el cajero automatico.\n");
+                    break;
+
+                default:
+                    printf("Opcion invalida.\n");
             }
 
         } while(opcion != 4);
