@@ -11,6 +11,7 @@ int main() {
     int acceso = 0;
     int posicionUsuario = -1;
     int opcion;
+    float deposito;
 
     printf("\nSISTEMA DE CAJERO AUTOMATICO\n\n");
 
@@ -40,6 +41,16 @@ int main() {
 
             if(opcion == 1) {
                 printf("Su saldo actual es: RD$ %.2f\n", saldos[posicionUsuario]);
+            }
+
+            else if(opcion == 2) {
+                printf("Ingrese monto a depositar: ");
+                scanf("%f", &deposito);
+
+                saldos[posicionUsuario] += deposito;
+
+                printf("Deposito realizado con exito.\n");
+                printf("Nuevo saldo: RD$ %.2f\n", saldos[posicionUsuario]);
             }
 
         } while(opcion != 4);
