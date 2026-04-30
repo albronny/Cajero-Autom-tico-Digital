@@ -38,6 +38,10 @@ int main() {
             printf("Seleccione opcion: ");
             scanf("%d", &opcion);
 
+            if(opcion == 1) {
+                printf("Su saldo actual es: RD$ %.2f\n", saldos[posicionUsuario]);
+            }
+
         } while(opcion != 4);
 
     } else {
