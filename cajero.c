@@ -11,7 +11,7 @@ int main() {
     int acceso = 0;
     int posicionUsuario = -1;
     int opcion;
-    float deposito;
+    float deposito, retiro;
 
     printf("\nSISTEMA DE CAJERO AUTOMATICO\n\n");
 
@@ -51,6 +51,19 @@ int main() {
 
                 printf("Deposito realizado con exito.\n");
                 printf("Nuevo saldo: RD$ %.2f\n", saldos[posicionUsuario]);
+            }
+
+            else if(opcion == 3) {
+                printf("Ingrese monto a retirar: ");
+                scanf("%f", &retiro);
+
+                if(retiro <= saldos[posicionUsuario]) {
+                    saldos[posicionUsuario] -= retiro;
+                    printf("Retiro realizado con exito.\n");
+                    printf("Nuevo saldo: RD$ %.2f\n", saldos[posicionUsuario]);
+                } else {
+                    printf("Fondos insuficientes para realizar el retiro.\n");
+                }
             }
 
         } while(opcion != 4);
